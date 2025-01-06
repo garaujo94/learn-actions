@@ -1,9 +1,9 @@
 name: Third Flow
 
-on:
-  workflow_run:
-    workflows: ["Second Flow"]
-    types: [completed]
+# on:
+#   workflow_run:
+#     workflows: ["Second Flow"]
+#     types: [completed]
 
 jobs:
   third-job:
@@ -11,4 +11,4 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Hello World
-        run: sdjfsjkdfh
+        run: echo "hi"
