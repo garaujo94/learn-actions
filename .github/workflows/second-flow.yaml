@@ -4,7 +4,15 @@ name: Second Flow
 #   workflow_run:
 #     workflows: ["GitHub Actions Demo"]
 #     types: [completed]
-
+on: 
+  push:
+    branches:
+      - "development"
+      - "main"
+  pull_request:
+    branches:
+      - "development"
+      - "main"
 jobs:
   second-job:
     runs-on: ubuntu-latest
