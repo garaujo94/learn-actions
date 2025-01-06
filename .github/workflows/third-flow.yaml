@@ -1,9 +1,9 @@
 name: Third Flow
 
-on:
-  workflow_run:
-    workflows: ["Second Flow"]
-    types: [completed]
+# on:
+#   workflow_run:
+#     workflows: ["Second Flow"]
+#     types: [completed]
 
 jobs:
   third-job:
