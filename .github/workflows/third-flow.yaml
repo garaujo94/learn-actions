@@ -11,4 +11,4 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Hello World
-        run: sdjfsjkdfh
+        run: echo "hi"
