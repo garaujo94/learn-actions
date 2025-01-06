@@ -1,29 +1,14 @@
-name: Workflow 3
+name: Third Flow
 
 on:
-  pull_request:
-    branches:
-      - main
-env:
-  GH_TOKEN: ${{ github.token }}
+  workflow_run:
+    workflows: ["Second Flow"]
+    types: [completed]
 
 jobs:
-  job3:
+  second-job:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Wait for Workflow 2
-        run: |
-          echo "Waiting for Workflow 2 to succeed..."
-          while ! gh run list --json status --jq '.[] | select(.name=="Workflow 2") | .status' | grep -q "completed"; do
-            sleep 5
-          done
-          if ! gh run list --json conclusion --jq '.[] | select(.name=="Workflow 2") | .conclusion' | grep -q "success"; then
-            echo "Workflow 2 failed, exiting."
-            exit 1
-          fi
-
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run Job 3
-        run: echo "Workflow 3 running"
+      - name: Hello World
+        run: sdjfsjkdfh

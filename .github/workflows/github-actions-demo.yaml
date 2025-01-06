@@ -1,12 +1,16 @@
-name: Workflow 1
-
-on:
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: 
+  push:
+    branches:
+      - "development"
+      - "main"
   pull_request:
     branches:
-      - main
-
+      - "development"
+      - "main"
 jobs:
-  job1:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -19,5 +23,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: sleep 10
+      - run: sleep 20
       - run: echo "🍏 This job's status is ${{ job.status }}."
