@@ -4,7 +4,15 @@ name: Third Flow
 #   workflow_run:
 #     workflows: ["Second Flow"]
 #     types: [completed]
-
+on: 
+  push:
+    branches:
+      - "development"
+      - "main"
+  pull_request:
+    branches:
+      - "development"
+      - "main"
 jobs:
   third-job:
     runs-on: ubuntu-latest
