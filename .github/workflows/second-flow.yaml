@@ -1,9 +1,9 @@
 name: Second Flow
 
-on:
-  workflow_run:
-    workflows: ["GitHub Actions Demo"]
-    types: [completed]
+# on:
+#   workflow_run:
+#     workflows: ["GitHub Actions Demo"]
+#     types: [completed]
 
 jobs:
   second-job:
